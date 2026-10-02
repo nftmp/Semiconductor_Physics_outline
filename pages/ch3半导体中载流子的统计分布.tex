@@ -516,3 +516,249 @@
     \end{center}
     升温后本征激发增强，少数载流子浓度明显增加，费米能级向$E_i$靠近。
 \end{problem}
+
+\begin{note}{求给定温度下杂质电离一定比例时的最大掺杂}
+    以N型掺杂为例，解$\frac{n_D^{+}}{N_D}=$给定比例可得$E_D-E_F$，再带入$E_F=E_c+k_0Tln\frac{N_D}{N_C}$
+\end{note}
+
+\begin{problem}
+    \textbf{题面（9）：}计算施主杂质浓度分别为$10^{16}\ \mathrm{cm}^{-3}$、
+    $10^{18}\ \mathrm{cm}^{-3}$、$10^{19}\ \mathrm{cm}^{-3}$的硅在室温下的费米能级，
+    并假定杂质全部电离。再用算出的费米能级核对这一假定是否在每种情况下都成立。
+    取施主能级在导带底下方$0.05\ \mathrm{eV}$处，按玻尔兹曼分布计算。
+
+    \textbf{解析：}室温取$T=300\ \mathrm{K}$，硅的$N_c=2.80\times10^{19}\ \mathrm{cm}^{-3}$，
+    $k_0T=0.02585\ \mathrm{eV}$，施主简并度取$g_D=2$。
+    假定杂质全部电离并忽略本征激发，则$n_0\simeq N_D$，故
+    \[
+    E_c-E_F=k_0T\ln\frac{N_c}{N_D},\qquad
+    E_F-E_D=0.05-(E_c-E_F).
+    \]
+    再代入施主电离率
+    \[
+    \alpha=\frac{n_D^+}{N_D}
+    =\frac{1}{1+2\exp[(E_F-E_D)/(k_0T)]},
+    \]
+    即可校核全部电离假定。计算结果如下，能量单位均为$\mathrm{eV}$。
+    \begin{center}
+        \small
+        \begin{tabular}{c c c c c}
+            \hline
+            $N_D\ (\mathrm{cm}^{-3})$ & $E_c-E_F$ & $E_F-E_D$ & 校核电离率$\alpha$ & 全部电离假定 \\
+            \hline
+            $10^{16}$ & $0.2052$ & $-0.1552$ & $99.5\%$ & 近似成立 \\
+            $10^{18}$ & $0.08614$ & $-0.03614$ & $66.9\%$ & 不成立 \\
+            $10^{19}$ & $0.02662$ & $0.02338$ & $16.8\%$ & 不成立 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    上述$E_F$均由全部电离假定求得；后两行的电离率是对该假定的校核值，
+    不能作为重新满足电中性条件后的实际电离率。
+\end{problem}
+
+\begin{problem}
+    \textbf{题面（10）：}以施主杂质电离$90\%$作为强电离的标准，
+    求掺砷的N型锗在$300\ \mathrm{K}$时，以杂质电离为主的饱和区掺杂浓度范围。
+
+    \textbf{解析：}取锗的$N_c=1.05\times10^{19}\ \mathrm{cm}^{-3}$，
+    砷施主电离能$\Delta E_D=E_c-E_D=0.013\ \mathrm{eV}$，
+    $g_D=2$，$k_0T=0.02585\ \mathrm{eV}$。
+    本征浓度沿用前题$n_i\simeq1.51\times10^{13}\ \mathrm{cm}^{-3}$。
+    % 锗中砷施主电离能来源：https://catalogimages.wiley.com/images/db/pdf/9781119155492.excerpt.pdf
+    令$\alpha=n_D^+/N_D$，忽略空穴时$n_0\simeq\alpha N_D$，于是
+    \[
+    \frac{1-\alpha}{\alpha}
+    =2\exp\!\left(\frac{E_F-E_D}{k_0T}\right)
+    =\frac{2\alpha N_D}{N_c}\exp\!\left(\frac{\Delta E_D}{k_0T}\right).
+    \]
+    整理得
+    \[
+    N_D=\frac{1-\alpha}{2\alpha^2}N_c
+    \exp\!\left(-\frac{\Delta E_D}{k_0T}\right).
+    \]
+    取$\alpha=0.9$，得允许的最大施主浓度
+    \[
+    N_{D,\max}=\frac{N_c}{16.2}\exp\!\left(-\frac{\Delta E_D}{k_0T}\right)
+    =3.92\times10^{17}\ \mathrm{cm}^{-3}.
+    \]
+    饱和区须同时满足杂质充分电离和杂质贡献占主导：
+    \begin{center}
+        \small
+        \begin{tabular}{c c}
+            \hline
+            条件 & 浓度限制 \\
+            \hline
+            电离率$\alpha\geq0.9$ & $N_D\leq3.92\times10^{17}\ \mathrm{cm}^{-3}$ \\
+            杂质电离为主：$\alpha N_D\gg n_i$ & $N_D\gg1.51\times10^{13}\ \mathrm{cm}^{-3}$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    因而所求范围可写为
+    \[
+    \boxed{1.51\times10^{13}\ \mathrm{cm}^{-3}\ll N_D
+    \leq3.92\times10^{17}\ \mathrm{cm}^{-3}}.
+    \]
+    其中下限表示应远大于本征浓度；题目未规定本征贡献的允许比例，故下限不是精确边界。
+\end{problem}
+
+\begin{problem}
+    \textbf{题面（12，仅求$90\%$电离）：}若硅中施主杂质电离能为
+    $\Delta E_D=0.04\ \mathrm{eV}$，施主浓度分别为
+    $10^{15}\ \mathrm{cm}^{-3}$、$10^{18}\ \mathrm{cm}^{-3}$，
+    求杂质电离$90\%$时的温度。
+
+    \textbf{解析：}取$g_D=2$，$k_0=8.617333262\times10^{-5}\ \mathrm{eV\cdot K^{-1}}$，
+    硅的有效态密度为
+    \[
+    N_c(T)=2.80\times10^{19}\left(\frac{T}{300}\right)^{3/2}\ \mathrm{cm}^{-3}.
+    \]
+    忽略本征激发，电离$90\%$时$n_0\simeq0.9N_D$。
+    由电离率公式及玻尔兹曼分布，
+    \[
+    0.9=\frac{1}{1+2\exp[(E_F-E_D)/(k_0T)]}
+    \quad\Longrightarrow\quad
+    \exp\!\left(\frac{E_F-E_D}{k_0T}\right)=\frac{1}{18},
+    \]
+    从而
+    \[
+    0.9N_D=\frac{N_c(T)}{18}\exp\!\left(-\frac{0.04}{k_0T}\right),
+    \qquad
+    N_c(T)\exp\!\left(-\frac{0.04}{k_0T}\right)=16.2N_D.
+    \]
+    将$N_c(T)$代入并取对数，得到便于数值求根的温度方程
+    \[
+    \frac{0.04}{k_0T}
+    =\ln\frac{2.80\times10^{19}}{16.2N_D}
+    +\frac{3}{2}\ln\frac{T}{300}.
+    \]
+    两种浓度对应的方程及数值解如下：
+    \begin{center}
+        \begin{tabular}{c c c}
+            \hline
+            $N_D\ (\mathrm{cm}^{-3})$ & 温度方程（$T$以$\mathrm{K}$计） & $90\%$电离温度 \\
+            \hline
+            $10^{15}$ & $464.18/T=7.45495+1.5\ln(T/300)$ & $\boxed{83.8\ \mathrm{K}}$ \\
+            $10^{18}$ & $464.18/T=0.54719+1.5\ln(T/300)$ & $\boxed{428.7\ \mathrm{K}}$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    掺杂浓度越高，达到同一电离率所需的温度越高。
+\end{problem}
+
+\begin{theorem}{简并半导体的载流子浓度}
+    以导带电子为例，简并程度可按费米能级相对导带底的位置粗略判断：
+    \begin{center}
+        \begin{tabular}{c c c}
+            \hline
+            类型 & 能级关系 & 分布处理 \\
+            \hline
+            非简并 & $E_c-E_F\gtrsim2k_0T$ & 可近似采用玻尔兹曼分布 \\
+            弱简并 & $0<E_c-E_F<2k_0T$ & 应采用费米分布 \\
+            简并 & $E_F\geq E_c$ & 采用费米分布 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    上述温度尺度为近似判据；$E_c-E_F$越大，玻尔兹曼近似越准确。
+    空穴的对应判据只需将$E_c-E_F$换成$E_F-E_v$。
+
+    采用\textbf{未归一化}的半阶费米积分
+    \[
+    F_{1/2}(\eta)=\int_0^{\infty}
+    \frac{x^{1/2}}{1+\exp(x-\eta)}\,\mathrm{d}x,
+    \]
+    电子与空穴浓度分别为
+    \[
+    \boxed{n_0=\frac{2N_c}{\sqrt{\pi}}
+    F_{1/2}\!\left(\frac{E_F-E_c}{k_0T}\right)},
+    \qquad
+    \boxed{p_0=\frac{2N_v}{\sqrt{\pi}}
+    F_{1/2}\!\left(\frac{E_v-E_F}{k_0T}\right)}.
+    \]
+    非简并极限下，$F_{1/2}(\eta)\simeq(\sqrt{\pi}/2)\exp(\eta)$，
+    上式退化为玻尔兹曼分布的浓度公式。
+    \textbf{简并情况下，一般有$n_0p_0\neq n_i^2$，不能直接使用非简并质量作用定律。}
+\end{theorem}
+
+\begin{problem}
+    \textbf{题面（18）：}掺磷的N型硅，已知磷的电离能为$0.044\ \mathrm{eV}$，
+    求室温下杂质一半电离时费米能级的位置和磷的浓度。
+
+    \textbf{解析：}室温取$300\ \mathrm{K}$，$k_0T=0.02585\ \mathrm{eV}$，
+    硅的$N_c=2.80\times10^{19}\ \mathrm{cm}^{-3}$，施主简并度取$g_D=2$。
+    由施主电离率公式，
+    \[
+    \frac{n_D^+}{N_D}=\frac{1}{1+2\exp[(E_F-E_D)/(k_0T)]}=\frac12,
+    \]
+    得$E_F-E_D=-k_0T\ln2$，故
+    \[
+    \boxed{E_c-E_F=(E_c-E_D)+k_0T\ln2
+    =0.044+0.02585\ln2=0.06192\ \mathrm{eV}}.
+    \]
+    此时约化费米能级$\eta=(E_F-E_c)/(k_0T)$，导带电子浓度用半阶费米积分计算：
+    \[
+    n_0=\frac{2N_c}{\sqrt{\pi}}F_{1/2}(\eta).
+    \]
+    忽略空穴，由电中性条件$n_0\simeq n_D^+=N_D/2$，得$N_D\simeq2n_0$。
+    下表的费米积分由本地conda环境中的\texttt{fdint.fdk(0.5, eta)}计算，
+    采用上文的未归一化定义。
+    \begin{center}
+        \begin{tabular}{c c c}
+            \hline
+            物理量 & 计算式 & 结果 \\
+            \hline
+            $E_c-E_F$ & $0.044+k_0T\ln2$ & $0.06192\ \mathrm{eV}$ \\
+            $\eta$ & $-(E_c-E_F)/(k_0T)$ & $-2.395$ \\
+            $F_{1/2}(\eta)$ & 半阶费米积分 & $0.07830635$ \\
+            $n_0$ & $(2N_c/\sqrt{\pi})F_{1/2}(\eta)$ & $2.47\times10^{18}\ \mathrm{cm}^{-3}$ \\
+            $N_D$ & $2n_0$ & $\boxed{4.95\times10^{18}\ \mathrm{cm}^{-3}}$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    费米能级位于施主能级下方$k_0T\ln2\simeq0.01792\ \mathrm{eV}$。
+\end{problem}
+
+\begin{problem}
+    \textbf{题面（21）：}试计算掺磷的硅、锗在室温下开始发生弱简并时的杂质浓度。
+
+    \textbf{解析：}采用上文判据，以$E_c-E_F=2k_0T$作为开始弱简并的边界，
+    故$\eta=-2$。室温取$300\ \mathrm{K}$，$k_0T=0.02585\ \mathrm{eV}$，
+    施主简并度取$g_D=2$；硅中磷电离能沿用第18题的$0.044\ \mathrm{eV}$，
+    锗中磷电离能取$0.012\ \mathrm{eV}$。
+    % 锗中磷施主电离能来源：https://catalogimages.wiley.com/images/db/pdf/9781119155492.excerpt.pdf
+    本地conda环境中的\texttt{fdint.fdk(0.5, -2)}给出
+    \[
+    F_{1/2}(-2)=0.1145878239,\qquad
+    n_0=\frac{2N_c}{\sqrt{\pi}}F_{1/2}(-2)=0.1292985133N_c.
+    \]
+    不能直接将电子浓度等同于施主浓度。令$\Delta E_D=E_c-E_D$，则边界处
+    \[
+    E_F-E_D=\Delta E_D-2k_0T,\qquad
+    \alpha=\frac{n_D^+}{N_D}
+    =\frac{1}{1+2\exp[\Delta E_D/(k_0T)-2]}.
+    \]
+    忽略空穴，由$n_0\simeq\alpha N_D$，得
+    \[
+    N_D=\frac{n_0}{\alpha}
+    =\frac{2N_c}{\sqrt{\pi}}F_{1/2}(-2)
+    \left[1+2\exp\!\left(\frac{\Delta E_D}{k_0T}-2\right)\right].
+    \]
+    两种材料的计算对照如下，浓度单位均为$\mathrm{cm}^{-3}$。
+    \begin{center}
+        \begin{tabular}{c c c}
+            \hline
+            物理量或步骤 & 硅 & 锗 \\
+            \hline
+            $N_c(300\ \mathrm{K})$ & $2.80\times10^{19}$ & $1.05\times10^{19}$ \\
+            $\Delta E_D\ (\mathrm{eV})$ & $0.044$ & $0.012$ \\
+            $E_c-E_F=2k_0T\ (\mathrm{eV})$ & $0.05170$ & $0.05170$ \\
+            $n_0=0.1292985133N_c$ & $3.62\times10^{18}$ & $1.36\times10^{18}$ \\
+            电离率$\alpha$ & $40.2\%$ & $69.9\%$ \\
+            $N_D=n_0/\alpha$ & $\boxed{9.00\times10^{18}}$ & $\boxed{1.94\times10^{18}}$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    若另作杂质全部电离近似，则$N_D\simeq n_0$，对应硅、锗分别为
+    $3.62\times10^{18}$、$1.36\times10^{18}\ \mathrm{cm}^{-3}$；
+    上表结果则保留了题中施主的不完全电离。
+\end{problem}
+
