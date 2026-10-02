@@ -1,0 +1,37 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+
+\documentclass[lang=cn, scheme=chinese, chinesefont=founder]{elegantbook} % 记得下方正字体
+
+\RequirePackage{standalone}
+
+\usepackage{tabularray}
+\usepackage{ninecolors}
+\usepackage{float}
+\usepackage{subcaption}
+
+% 封面信息
+\title{半导体物理小助手}
+\institute{南洋学辅}
+\author{南洋学辅治学部资料编写小组}
+\date{\today}
+
+
+% 封面图片
+\cover{cover.jpg} % 默认封面
+\logo{logo.png} % 学辅logo
+
+% 封面颜色
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\mainmatter
+
+\include{pages/ch3半导体中载流子的统计分布}
+
+
+\end{document}

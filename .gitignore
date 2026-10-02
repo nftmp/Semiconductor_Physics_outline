@@ -1,0 +1,47 @@
+# 1. LaTeX 编译垃圾文件
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.byte
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.toc
+*.xdv
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.lb
+
+# 2. TikZ Externalization
+figures/cache/*
+!figures/cache/.gitkeep
+*.dpth
+*.md5
+*.dep
+
+# 3. PDF
+*.pdf
+figures/*.pdf
+figures/cache/*.pdf
+
+# 4. 编辑器与系统垃圾
+.vscode/
+.idea/
+*.DS_Store
+*.auxlock
+Thumbs.db
